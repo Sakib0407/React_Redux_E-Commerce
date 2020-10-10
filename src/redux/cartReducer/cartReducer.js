@@ -1,4 +1,4 @@
-import { addItemToCart } from './cardUtil'
+import { addItemToCart, removeItemFromCart } from './cardUtil'
 const initialState ={
 
     hidden: false,
@@ -19,6 +19,11 @@ export const cartReducer = (state= initialState , action) =>{
             return{
                 ...state,
                 cartItems: addItemToCart(state.cartItems, action.payload)
+            }
+            case "DECREASE_CART_ITEMS" :
+            return{
+                ...state,
+                cartItems: removeItemFromCart(state.cartItems, action.payload)
             }
         case 'DELETE_CART_ITEMS' :
             

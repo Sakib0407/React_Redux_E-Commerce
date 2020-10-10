@@ -12,3 +12,7 @@ export const deletecartItems = item =>({
     type: "DELETE_CART_ITEMS",
     payload: item
 })
+export const decreaseCartItem = item => ({
+    type: "DECREASE_CART_ITEMS",
+    payload: item
+})
