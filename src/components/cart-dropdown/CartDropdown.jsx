@@ -18,7 +18,7 @@ const CartDropdown = () => {
               (item.map(item => <CartItem key={item.id} item={item} />)) :
               <span className= 'empty'>Your cart is empty</span>
                 }           
-              </div>
+              </div>git commit
             <CustomButton onClick={() =>{ 
                 history.push('/checkout')
                 dispatch(setCartHidden())
