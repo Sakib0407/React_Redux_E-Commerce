@@ -6,7 +6,7 @@
   
   max-width: 1295px;
   padding: 10px 0;
-  margin-bottom: 25px;
+  margin-bottom: 2px;
   .logo-container {
     height: 100%;
     width: 70px;
@@ -26,4 +26,16 @@
       padding: 0 15px;
     }
   }
+  @media screen and(max-width: 800px){
+    .logo-container {
+      height: 100%;
+      width: 60px;
+    
+  }
+  .options {
+    width: 80%;
+    height: 100%;
+    font-size: 1.2rem;
+}
+}
 }
