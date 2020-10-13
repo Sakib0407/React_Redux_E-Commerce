@@ -31,7 +31,7 @@ const initialState = {
         imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
         size: 'large',
         id: 5,
-        linkUrl: 'men'
+        linkUrl: 'mens'
       }
     ]
 }

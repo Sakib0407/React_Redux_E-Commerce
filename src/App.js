@@ -47,7 +47,7 @@ const App = () =>{
         <Route exact path='/checkout' > <Checkout /></Route> 
         <Route path='/signin' > 
         {currentUser.user.currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage /> }</Route> 
-        <Route to='/shop/:name'> <Collection /></Route>
+        <Route path='/shop/:name'><Collection /></Route>
       </Switch>
     </div>
   );

@@ -4,18 +4,16 @@ import CustomButton from '../custom-button/custom-button.component'
 import { useDispatch } from 'react-redux'
 import { cartItems } from '../../redux/cartReducer/cartAction'
 
-const CollectionItem = ( {item }) =>{
+const CollectionItem = ( {item, category }) =>{
   const dispatch = useDispatch()
   
   const { name, price, imageUrl} = item
   return(
-    <div className='collection-item'>
+      <div className={`${category ? 'category' : 'collection-item'}`}>
 
-      <div
+      <img
       className='image'
-      style={{
-        backgroundImage: `url(${imageUrl})`
-      }} />
+     src={imageUrl} />
       <div className='collection-footer'>
       <span className='name'>{name}</span>
           
@@ -24,7 +22,8 @@ const CollectionItem = ( {item }) =>{
     </div>
     <CustomButton onClick={() => dispatch(cartItems(item))} className='custom-button'inverted>add to cart</CustomButton>
     </div>
-
+  
+ 
 );
     }
 export default CollectionItem;
