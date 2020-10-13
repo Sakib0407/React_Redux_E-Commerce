@@ -1,18 +1,24 @@
 .col{
+    display: flex;
    margin: 0 auto;
     max-width: 1280px;
     justify-content: center;
     margin-top: 70px ;
+    align-items: center;
+    flex-direction: column;
 
+}
+.title{
+    margin-bottom: 30px;
 }
 .prev{
     display: flex;
-    
+    max-width: 1270px;
     flex-wrap: wrap;
     margin: 0 auto;
     align-items: center;
-    gap: 29px;
-    justify-content: flex-start;
+    gap: 3.5%;
+    
 
    
 }
