@@ -43,15 +43,15 @@ const handleSubmit = async(e) =>{
 
     await createUserProfileDocument(user, { displayName });
 
-  setState({
-      displayName: '',
-      email: '',
-      password: '',
-      confirmPassword: ''
-    });
   } catch (error) {
     console.error(error);
   }
+  setState({
+    displayName: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  })
 }
   
     return (
