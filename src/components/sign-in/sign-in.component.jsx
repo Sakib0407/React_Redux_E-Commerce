@@ -9,6 +9,7 @@ import './sign-in.style.scss';
 
 const SignIn =() =>  {
   
+  
   const [state, setState] = React.useState({
       email: '',
       password: ''
@@ -17,20 +18,22 @@ const SignIn =() =>  {
 
 const  handleSubmit = async event => {
     event.preventDefault()
+    
     const { email , password} = state
     if(email !== ''){
 
     try{
        await auth.signInWithEmailAndPassword(email , password)
-      setState( {
-        email: '',
-        password: ''
-      }) 
+       
+       
+      
     }catch( error)
     {
       console.log(error)
+      alert('Email and password does not matched')
     }
     }
+    
   };
   const handleChange = (e) =>{
       
@@ -40,7 +43,7 @@ const  handleSubmit = async event => {
       [e.target.name]: value })
 
   }
-
+ 
     return (
       <div className='sign-in'>
         <h2>I already have an account</h2>

@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 
 import './menu-item.styles.scss';
 
-const MenuItem = ({ title, imageUrl, size,  linkUrl }) => (
+const MenuItem = ({ title, imageUrl, size,  linkUrl }) =>{
+  
+  console.log(linkUrl)
+  return(
  <>
   <Link className={`${size} menu-item`} to ={`/shop/${linkUrl}`}>
     <div
@@ -21,5 +24,5 @@ const MenuItem = ({ title, imageUrl, size,  linkUrl }) => (
  </>
  
 );
-
+    }
 export default (MenuItem);
