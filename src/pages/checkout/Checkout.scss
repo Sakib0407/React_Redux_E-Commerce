@@ -5,10 +5,7 @@
     flex-direction: column;
     align-items: center;
     margin: 50px auto 0;
-    @media screen and(max-width: 800px){
-      width: 98%;
-      margin: 0 auto;
-    }
+   
   
     .checkout-header {
       width: 100%;
@@ -17,9 +14,12 @@
       justify-content: space-between;
       border-bottom: 1px solid darkgrey;
       @media screen and(max-width: 800px){
-        width: 80%;
-        font-size: 15px;
+        display: flex;
+        justify-content: flex-start;
+        gap: 18px;
+        font-size: 10px;
         border-bottom: 1px solid darkgrey;
+        
       }
   
       .header-block {
@@ -28,6 +28,7 @@
         @media screen and(max-width: 800px){
           width: unset;
           font-size: 13px;
+          .remove{}
         }
   
         &:last-child {
@@ -40,5 +41,20 @@
       margin-top: 30px;
       margin-left: auto;
       font-size: 36px;
+    }
+    .stripe{
+      margin-top: 30px;
+    }
+    @media screen and(max-width: 800px){
+      width: 98%;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      .total{ 
+        font-size: 1.2rem;
+        margin-top: 20px;
+  
+      }
     }
   }

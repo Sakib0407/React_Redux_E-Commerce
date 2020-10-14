@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import CheckoutItem from '../../components/checkout/checkoutItem'
+import StripeCheckoutButton from '../../components/stripe/StripeCheckoutButton'
 import './Checkout.scss'
 
 const Checkout = () => {
@@ -29,6 +30,9 @@ const Checkout = () => {
           <CheckoutItem key={cartItem.id} cartItem={cartItem} />
         ))}
         <div className='total'>TOTAL: ${total}</div>
+        <div className='stripe'>
+        <StripeCheckoutButton  price={total} />
+        </div>
       </div>
     )
 }
