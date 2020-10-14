@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { useDispatch , useSelector} from 'react-redux'
 import { setCurrentUser } from './redux/userReducer/userAction'
 import Checkout from './pages/checkout/Checkout'
+import * as serviceWorker from './serviceWorker'
  
 
 import './App.css';
@@ -55,3 +56,5 @@ const App = () =>{
 
 
 export default App;
+
+serviceWorker.register();
