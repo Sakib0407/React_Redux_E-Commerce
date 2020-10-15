@@ -9,9 +9,15 @@ const CartDropdown = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const item = useSelector(state => state.cart.cartItems)
+    const user = useSelector(state => state.user.currentUser)
+    const onClick = () =>{
+        user ?  history.push('/checkout') :  history.push('/signin')
+        dispatch(setCartHidden())
+
+    }
 
     return (
-        <div className ='cart-dropdown' >
+        <div className ={`${item.length ? '' : 'height'} cart-dropdown`} >
             <div className ='cart-items'>
                 {
                     item.length ?
@@ -19,11 +25,8 @@ const CartDropdown = () => {
               <span className= 'empty'>Your cart is empty</span>
                 }           
               </div>
-            <CustomButton onClick={() =>{ 
-                history.push('/checkout')
-                dispatch(setCartHidden())
-                }}>Go To Checkout</CustomButton>
-            
+              {item.length ?  (
+            <CustomButton onClick={onClick}>Go To Checkout</CustomButton>) : null}
         </div>
     )
 }

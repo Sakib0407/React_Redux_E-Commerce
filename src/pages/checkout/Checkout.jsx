@@ -3,10 +3,18 @@ import { useSelector } from 'react-redux'
 import CheckoutItem from '../../components/checkout/checkoutItem'
 import StripeCheckoutButton from '../../components/stripe/StripeCheckoutButton'
 import './Checkout.scss'
-
+import { useHistory } from 'react-router-dom'
 const Checkout = () => {
     const item = useSelector(state => state.cart.cartItems)
+    const history = useHistory()
+    
     const total =  item.reduce((a , item) => (a + item.price ) * item.quantity, 0)
+    if( item.length == 0 ){
+      setTimeout(() =>{
+        history.push('/shop')
+      }, 200)
+    }
+
     return (
         <div className='checkout-page'>
         <div className='checkout-header'>
@@ -30,7 +38,7 @@ const Checkout = () => {
           <CheckoutItem key={cartItem.id} cartItem={cartItem} />
         ))}
         <div className='total'>TOTAL: ${total}</div>
-        <div className='stripe'>
+        <div className='stripe'>          
         <StripeCheckoutButton  price={total} />
         </div>
       </div>
